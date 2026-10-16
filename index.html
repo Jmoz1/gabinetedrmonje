@@ -14,6 +14,7 @@
   <meta property="og:url" content="https://gabinetedrmonje.es/">
   <meta property="og:title" content="Dr. Juan Carlos Monje Ortiz, MD | Gabinete Médico Independiente B2B">
   <meta property="og:description" content="Dirección Científica CFC (SNS), Medical Writing y Soporte Facultativo de Urgencia en 24-48h bajo estricta lealtad de marca blanca para agencias y biofarma.">
+  <meta property="og:image" content="https://gabinetedrmonje.es/img/dr_juan_carlos_monje_square.jpg">
   <meta property="og:locale" content="es_ES">
 
   <!-- Twitter Card -->
@@ -21,6 +22,7 @@
   <meta name="twitter:url" content="https://gabinetedrmonje.es/">
   <meta name="twitter:title" content="Dr. Juan Carlos Monje Ortiz, MD · Gabinete Médico B2B">
   <meta name="twitter:description" content="Dirección Científica CFC, Desbloqueo Veeva PromoMats y Evaluación Clínica. Tarifas oficiales cerradas y SLAs perentorios.">
+  <meta name="twitter:image" content="https://gabinetedrmonje.es/img/dr_juan_carlos_monje_square.jpg">
 
   <!-- Schema.org JSON-LD (SEO Semántico para Google & Motores IA) -->
   <script type="application/ld+json">
@@ -30,7 +32,7 @@
     "name": "Gabinete Médico Independiente B2B · Dr. Juan Carlos Monje Ortiz",
     "alternateName": "Gabinete Dr. Monje",
     "url": "https://gabinetedrmonje.es",
-    "image": "https://gabinetedrmonje.es/img/dr_juan_carlos_monje.png",
+    "image": "https://gabinetedrmonje.es/img/dr_juan_carlos_monje_square.jpg",
     "description": "Servicios facultativos B2B de Dirección Científica CFC, Medical Writing, Validación en Veeva PromoMats y Evaluación Clínica MDR/IVDR para agencias de salud y biofarmacéuticas.",
     "telephone": "+34635375047",
     "email": "contacto@gabinetedrmonje.es",
@@ -86,10 +88,11 @@
       --red-light: #FEF2F2;
       --red-border: #FECACA;
       --radius: 8px;
-      --radius-lg: 12px;
+      --radius-lg: 14px;
+      --radius-xl: 18px;
       --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
-      --shadow-md: 0 4px 14px rgba(0,0,0,0.06);
-      --shadow-lg: 0 12px 28px rgba(0,0,0,0.09);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
+      --shadow-lg: 0 16px 36px rgba(11, 19, 43, 0.09);
     }
 
     * {
@@ -152,8 +155,8 @@
     }
 
     .brand-title {
-      font-weight: 800;
-      font-size: 1.12rem;
+      font-weight: 900;
+      font-size: 1.15rem;
       color: var(--navy);
       letter-spacing: -0.02em;
     }
@@ -226,19 +229,6 @@
       border-color: var(--slate);
     }
 
-    .btn-download {
-      background: #FFFFFF;
-      border: 1px solid var(--blue-border);
-      color: var(--blue-dark) !important;
-      font-size: 0.82rem;
-      padding: 7px 14px;
-    }
-
-    .btn-download:hover {
-      background: var(--blue-light);
-      border-color: var(--blue-dark);
-    }
-
     /* HERO */
     .hero {
       padding: 56px 0 48px;
@@ -297,72 +287,84 @@
       flex-wrap: wrap;
     }
 
-    /* DOCTOR PROFILE CARD (RIGHT HERO COLUMN) */
-    .doctor-card {
+    /* DOCTOR HERO CARD (RIGHT COLUMN CON FOTO REAL) */
+    .doctor-hero-card {
       background: #FFFFFF;
       border: 1px solid var(--border-card);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      box-shadow: var(--shadow-md);
+      border-radius: var(--radius-xl);
+      padding: 26px;
+      box-shadow: var(--shadow-lg);
       position: relative;
+      border-top: 4px solid var(--blue-dark);
     }
 
-    .doctor-badge-top {
+    .doctor-status-badge {
       position: absolute;
-      top: -12px;
-      right: 20px;
-      background: var(--green-dark);
+      top: -14px;
+      right: 24px;
+      background: var(--navy);
       color: #FFFFFF;
-      font-size: 0.72rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      padding: 3px 10px;
-      border-radius: 12px;
-      letter-spacing: 0.04em;
-    }
-
-    .doctor-header {
-      display: flex;
-      gap: 18px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      display: inline-flex;
       align-items: center;
-      margin-bottom: 16px;
+      gap: 8px;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: var(--shadow-sm);
     }
 
-    .doctor-avatar-wrapper {
-      width: 84px;
-      height: 84px;
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #10B981;
       border-radius: 50%;
+      box-shadow: 0 0 8px #10B981;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.2); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .doctor-portrait-box {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .doctor-photo-frame {
+      width: 110px;
+      height: 110px;
+      border-radius: 16px;
       overflow: hidden;
-      border: 3px solid var(--blue-light);
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 8px 22px rgba(11, 19, 43, 0.16);
+      border: 3px solid #FFFFFF;
+      outline: 2px solid var(--blue-border);
       flex-shrink: 0;
       background: var(--navy);
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
-    .doctor-avatar-img {
+    .doctor-photo-frame img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
-    .doctor-avatar-fallback {
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: #FFFFFF;
-      letter-spacing: -0.02em;
-    }
-
-    .doctor-info-title {
-      font-size: 1.15rem;
+    .doctor-hero-name {
+      font-size: 1.25rem;
       font-weight: 900;
       color: var(--navy);
-      margin-bottom: 2px;
+      letter-spacing: -0.01em;
+      margin-bottom: 3px;
     }
 
-    .doctor-info-role {
+    .doctor-hero-role {
       font-size: 0.8rem;
       font-weight: 700;
       color: var(--blue-dark);
@@ -371,21 +373,21 @@
       margin-bottom: 4px;
     }
 
-    .doctor-info-colegiado {
-      font-size: 0.82rem;
+    .doctor-hero-col {
+      font-size: 0.84rem;
       font-weight: 600;
-      color: var(--slate-light);
+      color: var(--slate);
     }
 
-    .doctor-credentials-list {
+    .doctor-hero-list {
       list-style: none;
       border-top: 1px solid var(--border-card);
       padding-top: 14px;
-      margin-top: 14px;
+      margin-top: 12px;
     }
 
-    .doctor-credentials-list li {
-      font-size: 0.82rem;
+    .doctor-hero-list li {
+      font-size: 0.84rem;
       color: var(--slate);
       margin-bottom: 8px;
       padding-left: 20px;
@@ -393,7 +395,7 @@
       line-height: 1.45;
     }
 
-    .doctor-credentials-list li::before {
+    .doctor-hero-list li::before {
       content: "•";
       position: absolute;
       left: 4px;
@@ -403,7 +405,7 @@
       top: -2px;
     }
 
-    .doctor-card-footer {
+    .doctor-hero-footer {
       border-top: 1px solid var(--border-card);
       padding-top: 14px;
       display: flex;
@@ -485,7 +487,7 @@
     .downloads-bar {
       background: var(--navy);
       color: #FFFFFF;
-      padding: 32px 0;
+      padding: 34px 0;
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
@@ -517,9 +519,9 @@
     }
 
     .download-card:hover {
-      background: rgba(255,255,255,0.12);
-      border-color: rgba(255,255,255,0.3);
-      transform: translateY(-1px);
+      background: rgba(255,255,255,0.14);
+      border-color: rgba(255,255,255,0.35);
+      transform: translateY(-2px);
     }
 
     .download-card-title {
@@ -532,6 +534,70 @@
     .download-card-meta {
       font-size: 0.74rem;
       color: #94A3B8;
+    }
+
+    /* EDITORIAL BIO SECTION (TRAYECTORIA MÉDICA DE FONDO) */
+    .bio-split {
+      display: grid;
+      grid-template-columns: 0.9fr 1.3fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .bio-portrait-box {
+      position: relative;
+    }
+
+    .bio-full-image {
+      width: 100%;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-card);
+      display: block;
+    }
+
+    .bio-image-quote {
+      position: absolute;
+      bottom: -20px;
+      left: 20px;
+      right: 20px;
+      background: rgba(11, 19, 43, 0.92);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      padding: 16px 20px;
+      border-radius: var(--radius);
+      font-size: 0.85rem;
+      line-height: 1.45;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: var(--shadow-md);
+    }
+
+    .bio-pillars-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .bio-pillar-item {
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .bio-pillar-item h5 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .bio-pillar-item p {
+      font-size: 0.82rem;
+      color: var(--slate);
+      line-height: 1.45;
     }
 
     /* MANIFIESTO OPERATIVO COMPARISON */
@@ -1303,10 +1369,12 @@
 
     @media (max-width: 920px) {
       .hero-split { grid-template-columns: 1fr; }
+      .bio-split { grid-template-columns: 1fr; }
       .hero-title { font-size: 2.15rem; }
       .nav-links { display: none; }
       .cta-section { padding: 40px 20px; }
       .footer-wrapper { flex-direction: column; text-align: center; }
+      .bio-pillars-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -1322,11 +1390,11 @@
 
       <ul class="nav-links">
         <li><a href="#soluciones">Soluciones</a></li>
+        <li><a href="#trayectoria">Quién Lidera</a></li>
         <li><a href="#manifiesto">Por qué el Gabinete</a></li>
         <li><a href="#rescate-urgente">Rescates 24-48h</a></li>
         <li><a href="#tarifario">Tarifas & SLAs</a></li>
         <li><a href="#pruebas-piloto">Pruebas Piloto</a></li>
-        <li><a href="#retainers">Retainers</a></li>
         <li><a href="#descargas">Dossiers PDF</a></li>
       </ul>
 
@@ -1338,7 +1406,7 @@
   </header>
 
   <main>
-    <!-- HERO SECTION CON SPLIT DE PERFIL MEDICO -->
+    <!-- HERO SECTION CON FOTO OFICIAL DEL DR. MONJE -->
     <div class="hero">
       <div class="container">
         
@@ -1374,30 +1442,34 @@
 
           <!-- COLUMNA DERECHA: TARJETA DE AUTORIDAD FACULTATIVA CON ROSTRO REAL -->
           <div>
-            <div class="doctor-card">
-              <div class="doctor-badge-top">Habilitación Facultativa España</div>
+            <div class="doctor-hero-card">
+              <div class="doctor-status-badge">
+                <span class="status-dot"></span>
+                <span>Disponible para Nuevos Proyectos B2B</span>
+              </div>
               
-              <div class="doctor-header">
-                <div class="doctor-avatar-wrapper">
-                  <img src="img/dr_juan_carlos_monje.png" alt="Dr. Juan Carlos Monje Ortiz, MD" class="doctor-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                  <span class="doctor-avatar-fallback" style="display: none;">JM</span>
+              <div class="doctor-portrait-box">
+                <div class="doctor-photo-frame">
+                  <img src="img/dr_juan_carlos_monje_square.jpg" alt="Dr. Juan Carlos Monje Ortiz, MD" width="110" height="110">
                 </div>
                 <div>
-                  <h3 class="doctor-info-title">Dr. Juan Carlos Monje Ortiz</h3>
-                  <div class="doctor-info-role">Director Científico & Médico Consultor</div>
-                  <div class="doctor-info-colegiado">Colegiado N.º 450865017 (COM Toledo)</div>
+                  <h3 class="doctor-hero-name">Dr. Juan Carlos Monje Ortiz</h3>
+                  <div class="doctor-hero-role">Director Científico & Médico Consultor</div>
+                  <div class="doctor-hero-col">Colegiado N.º 450865017 (COM Toledo)</div>
+                  <div style="font-size: 0.78rem; color: var(--green-dark); font-weight: 700; margin-top: 4px;">
+                    Homologación Ministerio de Universidades
+                  </div>
                 </div>
               </div>
 
-              <ul class="doctor-credentials-list">
-                <li><strong>Homologación Oficial:</strong> Título oficial de Médico Cirujano homologado en España por el Ministerio de Universidades.</li>
-                <li><strong>Experiencia Hospitalaria:</strong> Ex-Médico de Urgencias y Soporte Vital Avanzado (Hospital Universitario Ruiz y Páez).</li>
-                <li><strong>Triple Posgrado Universitario:</strong> Diagnóstico de Laboratorio Avanzado, Genética Médica/Genómica y Farmacología Clínica/Farmacometría.</li>
+              <ul class="doctor-hero-list">
+                <li><strong>Experiencia Hospitalaria Real:</strong> Ex-Médico de Urgencias y Soporte Vital Avanzado (Hospital Universitario Ruiz y Páez).</li>
+                <li><strong>Triple Posgrado Universitario:</strong> Diagnóstico de Laboratorio Avanzado, Genética Médica/Genómica y Farmacología Clínica de Precisión.</li>
                 <li><strong>Acreditaciones Internacionales:</strong> NIH (Principles of Clinical Pharmacology) y The Global Health Network (GCP, GCLP, Data Safety).</li>
               </ul>
 
-              <div class="doctor-card-footer">
-                <span style="font-size: 0.78rem; font-weight: 700; color: var(--green-dark);">✓ Cobertura R.C. 600.000 €</span>
+              <div class="doctor-hero-footer">
+                <span style="font-size: 0.78rem; font-weight: 700; color: var(--green-dark);">✓ Póliza R.C. 600.000 € (A.M.A.)</span>
                 <a href="https://www.linkedin.com/in/juan-carlos-monje-ortiz-675949190" target="_blank" rel="noopener" style="font-size: 0.82rem; font-weight: 700; color: var(--blue-dark);">
                   Ver Perfil LinkedIn ↗
                 </a>
@@ -1482,8 +1554,65 @@
       </div>
     </div>
 
+    <!-- SECCIÓN EDITORIAL: QUIÉN LIDERA EL GABINETE (BIOGRAFÍA Y AUTORIDAD) -->
+    <section id="trayectoria" style="background: #FFFFFF; border-bottom: 1px solid var(--border-card);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">DIRECCIÓN FACULTATIVA & CRITERIO MÉDICO</div>
+          <h2 class="section-title">El Puente Entre la Práctica Hospitalaria y la Estrategia B2B</h2>
+          <p class="section-desc">
+            En un sector saturado de redactores publicitarios sin titulación sanitaria y de médicos asistenciales sin disponibilidad horaria, el Gabinete aporta el equilibrio exacto: rigor clínico hospitalario de trinchera y profesionalidad corporativa ágil.
+          </p>
+        </div>
+
+        <div class="bio-split">
+          <div class="bio-portrait-box">
+            <img src="img/dr_juan_carlos_monje_portrait.jpg" alt="Dr. Juan Carlos Monje Ortiz, MD en España" class="bio-full-image">
+            <div class="bio-image-quote">
+              <em>«La medicina en la agencia o en el laboratorio no se puede improvisar. Exige el mismo rigor con el que tratamos a un paciente en la urgencia hospitalaria, combinado con la velocidad y la lealtad que requiere el mercado corporativo.»</em><br>
+              <strong style="display: block; margin-top: 6px; color: var(--blue-border);">— Dr. Juan Carlos Monje Ortiz, MD</strong>
+            </div>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1.65rem; font-weight: 900; color: var(--navy); margin-bottom: 12px;">
+              Dr. Juan Carlos Monje Ortiz, MD
+            </h3>
+            <p style="font-size: 1rem; color: var(--slate); line-height: 1.65; margin-bottom: 16px;">
+              Médico Colegiado en el Ilustre Colegio Oficial de Médicos de Toledo (Col. N.º 450865017) y con título oficial de Médico Cirujano homologado en España por el Ministerio de Universidades. Su trayectoria combina la asistencia en primera línea hospitalaria con una sólida especialización de posgrado en diagnóstico molecular y farmacometría.
+            </p>
+            <p style="font-size: 0.95rem; color: var(--slate); line-height: 1.6; margin-bottom: 20px;">
+              Durante su desempeño en Medicina de Urgencias y Soporte Vital Avanzado en el Hospital Universitario Ruiz y Páez, gestionó situaciones clínicas críticas, farmacoterapia intensiva y farmacovigilancia de toxicidades agudas. Esta experiencia directa a pie de cama le permite detectar incongruencias clínicas que un redactor no médico pasa por alto y fundamentar claims con la autoridad que exige el sector biofarmacéutico.
+            </p>
+
+            <div class="bio-pillars-grid">
+              <div class="bio-pillar-item">
+                <h5>🧬 Genómica & Diagnóstico Avanzado</h5>
+                <p>Especialización en biomarcadores somáticos/germinales, paneles NGS y evaluación del rendimiento clínico bajo MDCG 2022-2.</p>
+              </div>
+
+              <div class="bio-pillar-item">
+                <h5>💊 Farmacometría & Farmacología Clínica</h5>
+                <p>Acreditado por el NIH en Principios de Farmacología Clínica. Dominio de farmacocinética (PK/PD) y guías CPIC de farmacogenética.</p>
+              </div>
+
+              <div class="bio-pillar-item">
+                <h5>🎓 Dirección Científica CFC (SNS)</h5>
+                <p>Diseño psicométrico de memorias docentes oficiales y exámenes de evaluación acreditados por el SNS bajo Ley 44/2003.</p>
+              </div>
+
+              <div class="bio-pillar-item">
+                <h5>🛡️ Lealtad de Marca Blanca & NDA</h5>
+                <p>Trabajo entre bambalinas con estricta lealtad corporativa. Máximo respeto a la relación entre la agencia y sus clientes farmacéuticos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- EL MANIFIESTO OPERATIVO: POR QUÉ LAS AGENCIAS ELIGEN EL GABINETE -->
-    <section id="manifiesto" style="background: #FFFFFF; border-bottom: 1px solid var(--border-card);">
+    <section id="manifiesto" style="background: var(--bg-page); border-bottom: 1px solid var(--border-card);">
       <div class="container">
         <div class="section-header">
           <div class="section-eyebrow">EL MANIFIESTO OPERATIVO B2B</div>
