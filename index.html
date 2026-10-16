@@ -14,7 +14,7 @@
   <meta property="og:url" content="https://gabinetedrmonje.es/">
   <meta property="og:title" content="Dr. Juan Carlos Monje Ortiz, MD | Gabinete Médico Independiente B2B">
   <meta property="og:description" content="Dirección Científica CFC (SNS), Medical Writing y Soporte Facultativo de Urgencia en 24-48h bajo estricta lealtad de marca blanca para agencias y biofarma.">
-  <meta property="og:image" content="https://gabinetedrmonje.es/img/dr_juan_carlos_monje_square.jpg">
+  <meta property="og:image" content="https://gabinetedrmonje.es/dr_monje_hero.jpg">
   <meta property="og:locale" content="es_ES">
 
   <!-- Twitter Card -->
@@ -22,7 +22,7 @@
   <meta name="twitter:url" content="https://gabinetedrmonje.es/">
   <meta name="twitter:title" content="Dr. Juan Carlos Monje Ortiz, MD · Gabinete Médico B2B">
   <meta name="twitter:description" content="Dirección Científica CFC, Desbloqueo Veeva PromoMats y Evaluación Clínica. Tarifas oficiales cerradas y SLAs perentorios.">
-  <meta name="twitter:image" content="https://gabinetedrmonje.es/img/dr_juan_carlos_monje_square.jpg">
+  <meta name="twitter:image" content="https://gabinetedrmonje.es/dr_monje_hero.jpg">
 
   <!-- Schema.org JSON-LD (SEO Semántico para Google & Motores IA) -->
   <script type="application/ld+json">
@@ -32,7 +32,7 @@
     "name": "Gabinete Médico Independiente B2B · Dr. Juan Carlos Monje Ortiz",
     "alternateName": "Gabinete Dr. Monje",
     "url": "https://gabinetedrmonje.es",
-    "image": "https://gabinetedrmonje.es/img/dr_juan_carlos_monje_square.jpg",
+    "image": "https://gabinetedrmonje.es/dr_monje_hero.jpg",
     "description": "Servicios facultativos B2B de Dirección Científica CFC, Medical Writing, Validación en Veeva PromoMats y Evaluación Clínica MDR/IVDR para agencias de salud y biofarmacéuticas.",
     "telephone": "+34635375047",
     "email": "contacto@gabinetedrmonje.es",
@@ -89,7 +89,7 @@
       --red-border: #FECACA;
       --radius: 8px;
       --radius-lg: 14px;
-      --radius-xl: 18px;
+      --radius-xl: 20px;
       --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
       --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
       --shadow-lg: 0 16px 36px rgba(11, 19, 43, 0.09);
@@ -229,9 +229,14 @@
       border-color: var(--slate);
     }
 
+    /* SECTIONS WITH ANCHOR OFFSET */
+    section, .scroll-section {
+      scroll-margin-top: 76px;
+    }
+
     /* HERO */
     .hero {
-      padding: 56px 0 48px;
+      padding: 52px 0 44px;
       background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-page) 100%);
       border-bottom: 1px solid var(--border-card);
     }
@@ -239,9 +244,9 @@
     .hero-split {
       display: grid;
       grid-template-columns: 1.25fr 0.85fr;
-      gap: 40px;
-      align-items: center;
-      margin-bottom: 40px;
+      gap: 36px;
+      align-items: stretch;
+      margin-bottom: 36px;
     }
 
     .badge-bar {
@@ -287,31 +292,55 @@
       flex-wrap: wrap;
     }
 
-    /* DOCTOR HERO CARD (RIGHT COLUMN CON FOTO REAL) */
+    /* DOCTOR HERO CARD (RIGHT COLUMN CON FOTO REAL INTEGRADA) */
     .doctor-hero-card {
       background: #FFFFFF;
       border: 1px solid var(--border-card);
       border-radius: var(--radius-xl);
-      padding: 26px;
+      overflow: hidden;
       box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
       position: relative;
       border-top: 4px solid var(--blue-dark);
     }
 
+    .doctor-card-photo-wrapper {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      background: var(--navy);
+      overflow: hidden;
+    }
+
+    .doctor-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .doctor-hero-card:hover .doctor-card-img {
+      transform: scale(1.03);
+    }
+
     .doctor-status-badge {
       position: absolute;
-      top: -14px;
-      right: 24px;
-      background: var(--navy);
+      top: 14px;
+      right: 14px;
+      background: rgba(11, 19, 43, 0.9);
+      backdrop-filter: blur(8px);
       color: #FFFFFF;
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      padding: 4px 14px;
+      padding: 4px 12px;
       border-radius: 20px;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.25);
       box-shadow: var(--shadow-sm);
     }
 
@@ -330,75 +359,65 @@
       100% { opacity: 1; transform: scale(1); }
     }
 
-    .doctor-portrait-box {
+    .doctor-card-body {
+      padding: 22px 24px;
       display: flex;
-      gap: 20px;
-      align-items: center;
-      margin-bottom: 18px;
-    }
-
-    .doctor-photo-frame {
-      width: 110px;
-      height: 110px;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 22px rgba(11, 19, 43, 0.16);
-      border: 3px solid #FFFFFF;
-      outline: 2px solid var(--blue-border);
-      flex-shrink: 0;
-      background: var(--navy);
-    }
-
-    .doctor-photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
     .doctor-hero-name {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 900;
       color: var(--navy);
       letter-spacing: -0.01em;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
 
     .doctor-hero-role {
       font-size: 0.8rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--blue-dark);
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     .doctor-hero-col {
-      font-size: 0.84rem;
-      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
       color: var(--slate);
+      background: var(--slate-ultra-light);
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+      width: fit-content;
     }
 
     .doctor-hero-list {
       list-style: none;
       border-top: 1px solid var(--border-card);
-      padding-top: 14px;
-      margin-top: 12px;
+      padding-top: 12px;
+      margin-bottom: 16px;
+      flex-grow: 1;
     }
 
     .doctor-hero-list li {
       font-size: 0.84rem;
       color: var(--slate);
-      margin-bottom: 8px;
-      padding-left: 20px;
+      margin-bottom: 7px;
+      padding-left: 18px;
       position: relative;
-      line-height: 1.45;
+      line-height: 1.4;
     }
 
     .doctor-hero-list li::before {
       content: "•";
       position: absolute;
-      left: 4px;
+      left: 2px;
       color: var(--blue-dark);
       font-weight: 900;
       font-size: 1.1rem;
@@ -407,11 +426,10 @@
 
     .doctor-hero-footer {
       border-top: 1px solid var(--border-card);
-      padding-top: 14px;
+      padding-top: 12px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 14px;
     }
 
     /* CREDENTIALS GRID */
@@ -539,37 +557,46 @@
     /* EDITORIAL BIO SECTION (TRAYECTORIA MÉDICA DE FONDO) */
     .bio-split {
       display: grid;
-      grid-template-columns: 0.9fr 1.3fr;
+      grid-template-columns: 0.95fr 1.25fr;
       gap: 48px;
-      align-items: center;
+      align-items: start;
     }
 
     .bio-portrait-box {
-      position: relative;
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
     }
 
     .bio-full-image {
       width: 100%;
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-lg);
-      border: 1px solid var(--border-card);
+      height: 480px;
+      object-fit: cover;
+      object-position: center top;
       display: block;
     }
 
-    .bio-image-quote {
-      position: absolute;
-      bottom: -20px;
-      left: 20px;
-      right: 20px;
-      background: rgba(11, 19, 43, 0.92);
-      backdrop-filter: blur(8px);
+    .bio-quote-card {
+      padding: 20px 24px;
+      background: var(--navy);
       color: #FFFFFF;
-      padding: 16px 20px;
-      border-radius: var(--radius);
-      font-size: 0.85rem;
-      line-height: 1.45;
-      border: 1px solid rgba(255,255,255,0.15);
-      box-shadow: var(--shadow-md);
+      border-top: 3px solid var(--blue-dark);
+    }
+
+    .bio-quote-text {
+      font-size: 0.9rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: #E2E8F0;
+      margin-bottom: 8px;
+    }
+
+    .bio-quote-author {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--blue-border);
     }
 
     .bio-pillars-grid {
@@ -1375,6 +1402,7 @@
       .cta-section { padding: 40px 20px; }
       .footer-wrapper { flex-direction: column; text-align: center; }
       .bio-pillars-grid { grid-template-columns: 1fr; }
+      .doctor-card-photo-wrapper { height: 280px; }
     }
   </style>
 </head>
@@ -1443,36 +1471,33 @@
           <!-- COLUMNA DERECHA: TARJETA DE AUTORIDAD FACULTATIVA CON ROSTRO REAL -->
           <div>
             <div class="doctor-hero-card">
-              <div class="doctor-status-badge">
-                <span class="status-dot"></span>
-                <span>Disponible para Nuevos Proyectos B2B</span>
-              </div>
-              
-              <div class="doctor-portrait-box">
-                <div class="doctor-photo-frame">
-                  <img src="img/dr_juan_carlos_monje_square.jpg" alt="Dr. Juan Carlos Monje Ortiz, MD" width="110" height="110">
-                </div>
-                <div>
-                  <h3 class="doctor-hero-name">Dr. Juan Carlos Monje Ortiz</h3>
-                  <div class="doctor-hero-role">Director Científico & Médico Consultor</div>
-                  <div class="doctor-hero-col">Colegiado N.º 450865017 (COM Toledo)</div>
-                  <div style="font-size: 0.78rem; color: var(--green-dark); font-weight: 700; margin-top: 4px;">
-                    Homologación Ministerio de Universidades
-                  </div>
+              <div class="doctor-card-photo-wrapper">
+                <img src="dr_monje_hero.jpg" alt="Dr. Juan Carlos Monje Ortiz, MD" class="doctor-card-img" onerror="if (this.src.indexOf('dr_juan_carlos_monje_square.jpg') === -1) this.src='dr_juan_carlos_monje_square.jpg';">
+                <div class="doctor-status-badge">
+                  <span class="status-dot"></span>
+                  <span>Disponible para Proyectos B2B</span>
                 </div>
               </div>
 
-              <ul class="doctor-hero-list">
-                <li><strong>Experiencia Hospitalaria Real:</strong> Ex-Médico de Urgencias y Soporte Vital Avanzado (Hospital Universitario Ruiz y Páez).</li>
-                <li><strong>Triple Posgrado Universitario:</strong> Diagnóstico de Laboratorio Avanzado, Genética Médica/Genómica y Farmacología Clínica de Precisión.</li>
-                <li><strong>Acreditaciones Internacionales:</strong> NIH (Principles of Clinical Pharmacology) y The Global Health Network (GCP, GCLP, Data Safety).</li>
-              </ul>
+              <div class="doctor-card-body">
+                <h3 class="doctor-hero-name">Dr. Juan Carlos Monje Ortiz</h3>
+                <div class="doctor-hero-role">Director Científico & Médico Consultor</div>
+                <div class="doctor-hero-col">
+                  <span>🏛️</span> Col. N.º 450865017 (COM Toledo) · Homologado en España
+                </div>
 
-              <div class="doctor-hero-footer">
-                <span style="font-size: 0.78rem; font-weight: 700; color: var(--green-dark);">✓ Póliza R.C. 600.000 € (A.M.A.)</span>
-                <a href="https://www.linkedin.com/in/juan-carlos-monje-ortiz-675949190" target="_blank" rel="noopener" style="font-size: 0.82rem; font-weight: 700; color: var(--blue-dark);">
-                  Ver Perfil LinkedIn ↗
-                </a>
+                <ul class="doctor-hero-list">
+                  <li><strong>Experiencia Hospitalaria:</strong> Ex-Médico de Urgencias y Soporte Vital Avanzado (Hospital Universitario Ruiz y Páez).</li>
+                  <li><strong>Triple Especialización:</strong> Diagnóstico Molecular, Genética Médica y Farmacología de Precisión.</li>
+                  <li><strong>Acreditaciones Internacionales:</strong> NIH (Principles of Clinical Pharmacology) y Global Health Network.</li>
+                </ul>
+
+                <div class="doctor-hero-footer">
+                  <span style="font-size: 0.78rem; font-weight: 800; color: var(--green-dark);">✓ Póliza R.C. 600.000 € (A.M.A.)</span>
+                  <a href="https://www.linkedin.com/in/juan-carlos-monje-ortiz-675949190" target="_blank" rel="noopener" style="font-size: 0.82rem; font-weight: 800; color: var(--blue-dark);">
+                    Ver Perfil LinkedIn ↗
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -1519,7 +1544,7 @@
         </div>
 
         <div class="downloads-grid">
-          <a href="docs/Dossier_Maestro_Cartera_Servicios_B2B.pdf" target="_blank" download class="download-card">
+          <a href="Dossier_Maestro_Cartera_Servicios_B2B.pdf" target="_blank" download class="download-card">
             <div>
               <div class="download-card-title">Dossier Maestro de Cartera B2B</div>
               <div class="download-card-meta">PDF Oficial · 2 páginas · Catálogo Global</div>
@@ -1527,7 +1552,7 @@
             <span style="font-size: 1.2rem;">📥</span>
           </a>
 
-          <a href="docs/Tarifario_Oficial_Servicios_Medicos_B2B.pdf" target="_blank" download class="download-card">
+          <a href="Tarifario_Oficial_Servicios_Medicos_B2B.pdf" target="_blank" download class="download-card">
             <div>
               <div class="download-card-title">Tarifario Oficial B2B & SLAs</div>
               <div class="download-card-meta">PDF Oficial · 2 páginas · Condiciones Económicas</div>
@@ -1535,7 +1560,7 @@
             <span style="font-size: 1.2rem;">📥</span>
           </a>
 
-          <a href="docs/Vendor_Onboarding_Pack_DrMonje.pdf" target="_blank" download class="download-card">
+          <a href="Vendor_Onboarding_Pack_DrMonje.pdf" target="_blank" download class="download-card">
             <div>
               <div class="download-card-title">Vendor Onboarding Pack</div>
               <div class="download-card-meta">PDF Oficial · 2 páginas · Homologación Compras</div>
@@ -1543,7 +1568,7 @@
             <span style="font-size: 1.2rem;">📥</span>
           </a>
 
-          <a href="docs/CV_Dr_Juan_Carlos_Monje_Medical_Writing.pdf" target="_blank" download class="download-card">
+          <a href="CV_Dr_Juan_Carlos_Monje_Medical_Writing.pdf" target="_blank" download class="download-card">
             <div>
               <div class="download-card-title">CV Medical Writing & Affairs</div>
               <div class="download-card-meta">PDF Oficial · 2 páginas · Perfil Curricular</div>
@@ -1567,10 +1592,12 @@
 
         <div class="bio-split">
           <div class="bio-portrait-box">
-            <img src="img/dr_juan_carlos_monje_portrait.jpg" alt="Dr. Juan Carlos Monje Ortiz, MD en España" class="bio-full-image">
-            <div class="bio-image-quote">
-              <em>«La medicina en la agencia o en el laboratorio no se puede improvisar. Exige el mismo rigor con el que tratamos a un paciente en la urgencia hospitalaria, combinado con la velocidad y la lealtad que requiere el mercado corporativo.»</em><br>
-              <strong style="display: block; margin-top: 6px; color: var(--blue-border);">— Dr. Juan Carlos Monje Ortiz, MD</strong>
+            <img src="dr_juan_carlos_monje_portrait.jpg" alt="Dr. Juan Carlos Monje Ortiz, MD en España" class="bio-full-image" onerror="if (this.src.indexOf('dr_monje_hero.jpg') === -1) this.src='dr_monje_hero.jpg';">
+            <div class="bio-quote-card">
+              <div class="bio-quote-text">
+                «La medicina en la agencia o en el laboratorio no se puede improvisar. Exige el mismo rigor con el que tratamos a un paciente en la urgencia hospitalaria, combinado con la velocidad y la lealtad que requiere el mercado corporativo.»
+              </div>
+              <div class="bio-quote-author">— Dr. Juan Carlos Monje Ortiz, MD</div>
             </div>
           </div>
 
@@ -2266,7 +2293,7 @@
                 Dossier de Proveedor Unificado (Vendor Onboarding Pack)
               </h3>
             </div>
-            <a href="docs/Vendor_Onboarding_Pack_DrMonje.pdf" target="_blank" download class="btn btn-primary">
+            <a href="Vendor_Onboarding_Pack_DrMonje.pdf" target="_blank" download class="btn btn-primary">
               📥 Descargar Vendor Pack en PDF
             </a>
           </div>
