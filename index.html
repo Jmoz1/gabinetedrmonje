@@ -627,64 +627,77 @@
       line-height: 1.45;
     }
 
-    /* MANIFIESTO OPERATIVO COMPARISON */
-    .manifesto-grid {
+    /* SINERGIA Y FILOSOFÍA COLABORATIVA B2B */
+    .synergy-grid, .manifesto-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 24px;
       margin-top: 32px;
     }
 
-    .manifesto-card {
+    .synergy-card, .manifesto-card {
       background: #FFFFFF;
       border: 1px solid var(--border-card);
-      border-radius: var(--radius);
+      border-radius: var(--radius-lg);
       padding: 28px;
       box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s ease;
     }
 
-    .manifesto-card.highlight {
+    .synergy-card:hover, .manifesto-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .synergy-card.highlight, .manifesto-card.highlight {
       border: 2px solid var(--blue-dark);
       background: #FFFFFF;
-      box-shadow: var(--shadow-md);
     }
 
-    .manifesto-card-header {
+    .synergy-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .synergy-card-header, .manifesto-card-header {
       font-size: 1.15rem;
       font-weight: 800;
-      margin-bottom: 12px;
+      color: var(--navy);
+      margin-bottom: 14px;
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .manifesto-list {
+    .synergy-list, .manifesto-list {
       list-style: none;
       font-size: 0.88rem;
       line-height: 1.5;
     }
 
-    .manifesto-list li {
+    .synergy-list li, .manifesto-list li {
       margin-bottom: 12px;
       padding-left: 24px;
       position: relative;
     }
 
-    .manifesto-card.bad .manifesto-list li::before {
-      content: "✕";
-      position: absolute;
-      left: 0;
-      color: var(--red);
-      font-weight: 900;
-    }
-
-    .manifesto-card.highlight .manifesto-list li::before {
+    .synergy-list li::before, .manifesto-list li::before {
       content: "✓";
       position: absolute;
       left: 0;
-      color: var(--green);
+      color: var(--blue-dark);
       font-weight: 900;
       font-size: 1rem;
+    }
+
+    .synergy-card.highlight .synergy-list li::before, .manifesto-card.highlight .manifesto-list li::before {
+      color: var(--green);
     }
 
     /* FAST-TRACK EMERGENCY BOX */
@@ -1419,8 +1432,8 @@
       <ul class="nav-links">
         <li><a href="#soluciones">Soluciones</a></li>
         <li><a href="#trayectoria">Quién Lidera</a></li>
-        <li><a href="#manifiesto">Por qué el Gabinete</a></li>
-        <li><a href="#rescate-urgente">Rescates 24-48h</a></li>
+        <li><a href="#filosofia">Sinergia & Alianza</a></li>
+        <li><a href="#rescate-urgente">Soporte 24-48h</a></li>
         <li><a href="#tarifario">Tarifas & SLAs</a></li>
         <li><a href="#pruebas-piloto">Pruebas Piloto</a></li>
         <li><a href="#descargas">Dossiers PDF</a></li>
@@ -1452,7 +1465,7 @@
             </h1>
 
             <p class="hero-lead">
-              El puente facultativo independiente entre la práctica clínica hospitalaria a pie de cama, el laboratorio de biología molecular y la regulación sanitaria europea. Precios cerrados por hito, rescates editoriales en menos de 48 horas y blindaje contractual de marca blanca.
+              El puente facultativo independiente entre la práctica clínica hospitalaria, el laboratorio de diagnóstico molecular y la regulación sanitaria europea. Precios cerrados por hito, soporte técnico prioritario en menos de 48 horas y blindaje contractual de marca blanca.
             </p>
 
             <div class="hero-actions">
@@ -1523,7 +1536,7 @@
           <div class="cred-card">
             <div class="cred-title">Agilidad Asíncrona</div>
             <div class="cred-val">SLA &lt; 2h en Urgencias</div>
-            <div class="cred-desc">Sin reuniones innecesarias. Trabajo directo sobre entregables.</div>
+            <div class="cred-desc">Comunicación estructurada y enfocada en entregables de alta precisión.</div>
           </div>
         </div>
 
@@ -1586,7 +1599,7 @@
           <div class="section-eyebrow">DIRECCIÓN FACULTATIVA & CRITERIO MÉDICO</div>
           <h2 class="section-title">El Puente Entre la Práctica Hospitalaria y la Estrategia B2B</h2>
           <p class="section-desc">
-            En un sector saturado de redactores publicitarios sin titulación sanitaria y de médicos asistenciales sin disponibilidad horaria, el Gabinete aporta el equilibrio exacto: rigor clínico hospitalario de trinchera y profesionalidad corporativa ágil.
+            La comunicación médica de alto nivel requiere conjugar dos mundos complementarios: el talento creativo y estratégico de las agencias con el rigor científico y facultativo de la práctica médica. El Gabinete actúa como un aliado de confianza, aportando solvencia clínica, visión traslacional y sincronía operativa con los ritmos de cada cuenta.
           </p>
         </div>
 
@@ -1595,7 +1608,7 @@
             <img src="dr_juan_carlos_monje_portrait.jpg" alt="Dr. Juan Carlos Monje Ortiz, MD en España" class="bio-full-image" onerror="if (this.src.indexOf('dr_monje_hero.jpg') === -1) this.src='dr_monje_hero.jpg';">
             <div class="bio-quote-card">
               <div class="bio-quote-text">
-                «La medicina en la agencia o en el laboratorio no se puede improvisar. Exige el mismo rigor con el que tratamos a un paciente en la urgencia hospitalaria, combinado con la velocidad y la lealtad que requiere el mercado corporativo.»
+                «El rigor científico y la vocación de servicio son la base de cualquier proyecto médico de excelencia. Nuestro compromiso es sumar criterio clínico, claridad y solvencia técnica para respaldar y potenciar el trabajo de los equipos de salud.»
               </div>
               <div class="bio-quote-author">— Dr. Juan Carlos Monje Ortiz, MD</div>
             </div>
@@ -1609,7 +1622,7 @@
               Médico Colegiado en el Ilustre Colegio Oficial de Médicos de Toledo (Col. N.º 450865017) y con título oficial de Médico Cirujano homologado en España por el Ministerio de Universidades. Su trayectoria combina la asistencia en primera línea hospitalaria con una sólida especialización de posgrado en diagnóstico molecular y farmacometría.
             </p>
             <p style="font-size: 0.95rem; color: var(--slate); line-height: 1.6; margin-bottom: 20px;">
-              Durante su desempeño en Medicina de Urgencias y Soporte Vital Avanzado en el Hospital Universitario Ruiz y Páez, gestionó situaciones clínicas críticas, farmacoterapia intensiva y farmacovigilancia de toxicidades agudas. Esta experiencia directa a pie de cama le permite detectar incongruencias clínicas que un redactor no médico pasa por alto y fundamentar claims con la autoridad que exige el sector biofarmacéutico.
+              Durante su desempeño en Medicina de Urgencias y Soporte Vital Avanzado en el Hospital Universitario Ruiz y Páez, gestionó situaciones clínicas críticas, farmacoterapia intensiva y farmacovigilancia de toxicidades agudas. Esta experiencia directa a pie de cama aporta un conocimiento práctico de la patología y de la toma de decisiones clínicas, facilitando el diseño de casos simulados realistas y la fundamentación precisa de claims conforme a la evidencia científica más actual.
             </p>
 
             <div class="bio-pillars-grid">
@@ -1638,54 +1651,58 @@
       </div>
     </section>
 
-    <!-- EL MANIFIESTO OPERATIVO: POR QUÉ LAS AGENCIAS ELIGEN EL GABINETE -->
-    <section id="manifiesto" style="background: var(--bg-page); border-bottom: 1px solid var(--border-card);">
+    <!-- SINERGIA MULTIDISCIPLINAR & FILOSOFÍA COLABORATIVA -->
+    <section id="filosofia" style="background: var(--bg-page); border-bottom: 1px solid var(--border-card);">
+      <a id="manifiesto"></a>
       <div class="container">
         <div class="section-header">
-          <div class="section-eyebrow">EL MANIFIESTO OPERATIVO B2B</div>
-          <h2 class="section-title">¿Por Qué las Cuentas de Salud Sufren con los Médicos Tradicionales?</h2>
+          <div class="section-eyebrow">SINERGIA MULTIDISCIPLINAR B2B</div>
+          <h2 class="section-title">Una Alianza Facultativa que Potencia a tu Equipo</h2>
           <p class="section-desc">
-            Las agencias y laboratorios no necesitan otro médico que exija reuniones telefónicas infinitas y entregue tarde. Necesitan un partner técnico que entienda de márgenes, maquetación, formatos editables y plazos cerrados.
+            La comunicación y formación médica de excelencia surge de la suma de talentos: la creatividad y estrategia de las agencias, el prestigio clínico de los comités hospitalarios y el respaldo técnico especializado del Gabinete.
           </p>
         </div>
 
-        <div class="manifesto-grid">
-          <!-- OPCION A: MEDICO TRADICIONAL -->
-          <div class="manifesto-card bad">
-            <div class="manifesto-card-header" style="color: var(--red);">
-              <span>👨‍⚕️</span> El Médico Clínico Tradicional
+        <div class="synergy-grid">
+          <!-- PILAR 1: ALIANZA CREATIVA CON AGENCIAS -->
+          <div class="synergy-card">
+            <span class="synergy-tag" style="color: var(--blue-dark);">Alianza Creativa & Estratégica</span>
+            <div class="synergy-card-header">
+              <span>✍️</span> Con Equipos Creativos y Redactores
             </div>
-            <ul class="manifesto-list">
-              <li><strong>Desconocimiento de Agencias:</strong> No entiende el ritmo de producción publicitaria ni los márgenes del 60% de una agencia.</li>
-              <li><strong>Reuniones Interminables:</strong> Exige llamadas telefónicas y videoconferencias continuas que roban tiempo al director de cuentas.</li>
-              <li><strong>Plazos Impredecibles:</strong> Subordina los entregables a su guardia hospitalaria; entregas con días de retraso.</li>
-              <li><strong>Incompatibilidad Pública:</strong> Frecuente conflicto legal con plazas estatutarias del Sistema Nacional de Salud (Ley 53/1984).</li>
+            <ul class="synergy-list">
+              <li><strong>Rigor que Respalda la Idea:</strong> Búsqueda y trazabilidad de bibliografía primaria (PubMed / Cochrane) para blindar los conceptos de campaña sin restar frescura ni impacto.</li>
+              <li><strong>Validación Temprana de Claims:</strong> Detección ágil de posibles objeciones médicas antes de la presentación al cliente, facilitando un proceso de aprobación fluido.</li>
+              <li><strong>Formatos Nativos y Editables:</strong> Integración respetuosa con el flujo de maquetación y diseño en Word (.docx) estructurado y PowerPoint (.pptx) para arte final.</li>
+              <li><strong>Actitud Facilitadora:</strong> Un interlocutor médico cercano y colaborativo que propone alternativas constructivas para que los mensajes comuniquen con fuerza.</li>
             </ul>
           </div>
 
-          <!-- OPCION B: REDACTOR CREATIVO NO MEDICO -->
-          <div class="manifesto-card bad">
-            <div class="manifesto-card-header" style="color: var(--amber-dark);">
-              <span>✍️</span> El Redactor Creativo No Médico
+          <!-- PILAR 2: FACILITACIÓN PARA KOLS -->
+          <div class="synergy-card">
+            <span class="synergy-tag" style="color: var(--purple);">Respeto Institucional & Académico</span>
+            <div class="synergy-card-header">
+              <span>🏛️</span> Con Líderes de Opinión (KOLs)
             </div>
-            <ul class="manifesto-list">
-              <li><strong>Lagunas Clínicas Graves:</strong> Inventa anamnesis o analíticas en casos clínicos que cualquier especialista detecta como irreales.</li>
-              <li><strong>Bloqueos en Veeva PromoMats:</strong> Incapacidad para defender técnicamente un claim ante el Medical Reviewer del laboratorio.</li>
-              <li><strong>Rechazos en Sanidad (CFC):</strong> Exámenes psicométricos con distractores absurdos y falta de justificación por guías clínicas.</li>
-              <li><strong>Sin Habilitación Facultativa:</strong> No puede firmar memorias docentes oficiales ni asumir dictámenes regulatorios.</li>
+            <ul class="synergy-list">
+              <li><strong>Alivio de la Carga Redaccional:</strong> Estructuración facultativa de borradores, ponencias y directrices clínicas para que los comités expertos no pierdan horas en tareas burocráticas.</li>
+              <li><strong>Estandarización Metodológica:</strong> Normalización rigurosa bajo pautas Vancouver, tablas comparativas y verificación de posologías conforme a Ficha Técnica.</li>
+              <li><strong>Diálogo Colegiado de Igual a Igual:</strong> Comunicación fluida médico a médico que comprende la realidad de la patología y la práctica hospitalaria.</li>
+              <li><strong>Optimización de su Tiempo:</strong> El especialista hospitalario puede concentrarse en revisar, aportar su criterio de vanguardia y validar el documento final.</li>
             </ul>
           </div>
 
-          <!-- OPCION C: GABINETE DR MONJE -->
-          <div class="manifesto-card highlight">
-            <div class="manifesto-card-header" style="color: var(--blue-dark);">
-              <span>🩺</span> Gabinete Dr. Juan Carlos Monje
+          <!-- PILAR 3: GARANTÍA PARA CUENTAS Y MEDICAL AFFAIRS -->
+          <div class="synergy-card highlight">
+            <span class="synergy-tag" style="color: var(--green-dark);">Seguridad Jurídica & Operativa</span>
+            <div class="synergy-card-header">
+              <span>🩺</span> Con Dirección, Cuentas y Compras
             </div>
-            <ul class="manifesto-list">
-              <li><strong>Criterio Clínico + Laboratorio + Regulación:</strong> Médico colegiado en España con triple posgrado en laboratorio, genética y farmacometría.</li>
-              <li><strong>Cero Reuniones Innecesarias:</strong> Operativa 100% asíncrona trazable por correo corporativo y WhatsApp ágil.</li>
-              <li><strong>Precios Cerrados por Hito:</strong> Presupuestos sin sorpresas parametrizados para proteger el margen de tu agencia.</li>
-              <li><strong>Archivos Editables & Audit-Ready:</strong> Entregas en Word (.docx), PowerPoint (.pptx), PDF de alta resolución y matrices Excel de PMIDs.</li>
+            <ul class="synergy-list">
+              <li><strong>Criterio Clínico + Laboratorio + Regulación:</strong> Médico colegiado en España (COM Toledo) con posgrados en diagnóstico molecular, genética y farmacometría.</li>
+              <li><strong>Compatibilidad Legal Plena:</strong> Ejercicio privado independiente sin plaza estatutaria en el SNS (Ley 53/1984), garantizando total tranquilidad contractual.</li>
+              <li><strong>Precios Cerrados por Hito:</strong> Presupuestos claros y transparentes sin desviaciones imprevistas, diseñados para respetar la planificación financiera de la cuenta.</li>
+              <li><strong>Lealtad de Marca Blanca & NDA:</strong> Confidencialidad absoluta y trabajo discreto entre bambalinas, alineado 100% con los objetivos de tu cliente.</li>
             </ul>
           </div>
         </div>
@@ -1697,13 +1714,13 @@
       <div class="container">
         <div class="emergency-header">
           <div>
-            <div class="emergency-badge">⚡ Unidad de Rescate Rápido B2B</div>
+            <div class="emergency-badge">⚡ Soporte Facultativo Prioritario B2B</div>
             <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--navy); margin-top: 6px;">
               Resolución de Incidencias Críticas en 24 a 48 Horas
             </h2>
           </div>
           <span style="font-size: 0.88rem; font-weight: 700; color: var(--amber-dark);">
-            Para cuellos de botella que amenazan plazos o patrocinios de laboratorio
+            Para requerimientos imprevistos, plazos perentorios o lanzamientos en curso
           </span>
         </div>
 
@@ -1743,12 +1760,12 @@
             <div class="emergency-top">
               <span class="emergency-sla">SLA: 48 a 72 Horas</span>
             </div>
-            <h3 class="emergency-title">Rescate de Borrador / Notas de KOL</h3>
+            <h3 class="emergency-title">Desarrollo y Armonización Científica con KOLs</h3>
             <p class="emergency-body">
-              Transformación facultativa de notas telegráficas, grabaciones o borradores incompletos de Jefes de Servicio hospitalarios en monografías o módulos científicos de 15 a 25 páginas terminados con rigor Vancouver, listos para su visto bueno y firma.
+              Estructuración facultativa y armonización de ponencias, esquemas preliminares o grabaciones de especialistas y comités clínicos en monografías o módulos científicos de 15 a 25 páginas con citación Vancouver, listos para su revisión colegiada y visto bueno.
             </p>
             <div class="emergency-footer">
-              <span style="font-size: 0.82rem; color: var(--slate-light);">Ghostwriting de élite</span>
+              <span style="font-size: 0.82rem; color: var(--slate-light);">Medical Writing & Edición Científica</span>
               <span class="emergency-price">1.950 €</span>
             </div>
           </div>
@@ -1762,7 +1779,7 @@
         <div class="section-header">
           <div class="section-eyebrow">CARTERA DE SERVICIOS ADAPTADA</div>
           <h2 class="section-title">Soluciones Especializadas por Perfil de Cuenta</h2>
-          <p class="section-desc">Selecciona tu tipología de organización para revisar los entregables técnicos y la forma exacta en la que absorbemos tus cuellos de botella.</p>
+          <p class="section-desc">Selecciona tu tipología de organización para revisar los entregables técnicos y la forma en la que apoyamos a tus equipos de trabajo.</p>
         </div>
 
         <!-- TABS NAV -->
@@ -1994,7 +2011,7 @@
           <div class="section-eyebrow">CONDICIONES ECONÓMICAS TRANSPARENTES</div>
           <h2 class="section-title">Tarifario Oficial B2B & Acuerdos de Nivel de Servicio (SLAs)</h2>
           <p class="section-desc">
-            Precios cerrados por hito o entregable. Sin desviaciones horarias imprevistas y parametrizados estrictamente para respetar los márgenes de producción habituales de agencias y consultoras (55% a 65%).
+            Precios cerrados por hito o entregable. Sin desviaciones horarias, estructurados para integrarse con total transparencia y previsibilidad en la planificación de agencias, consultoras y departamentos de Medical Affairs.
           </p>
         </div>
 
@@ -2402,7 +2419,7 @@
               ¿Qué canales se utilizan para la comunicación operativa en el día a día?
             </div>
             <div class="faq-answer">
-              Para garantizar la máxima agilidad y eliminar reuniones innecesarias que restan tiempo a los directores de cuentas, la operativa se canaliza por <strong>vía asíncrona prioritaria</strong> (correo electrónico corporativo y canal directo de WhatsApp / Teams / Slack para incidencias perentorias). Las reuniones por videoconferencia se reservan exclusivamente para briefings iniciales de alta complejidad o advisory boards.
+              Para optimizar los tiempos de gestión y respetar la operativa diaria de los equipos de cuentas, la comunicación se canaliza preferentemente por <strong>vía asíncrona estructurada</strong> (correo electrónico corporativo y canal directo de mensajería para seguimiento de entregables). Las reuniones por videoconferencia se reservan para briefings iniciales de alta complejidad o comités científicos.
             </div>
           </div>
         </div>
@@ -2412,9 +2429,9 @@
     <!-- CTA FINAL -->
     <div class="container">
       <div class="cta-section">
-        <h2 class="cta-title">¿Tienes un Pico de Trabajo o una Urgencia en Marcha?</h2>
+        <h2 class="cta-title">¿Tienes un Pico de Trabajo o un Proyecto en Marcha?</h2>
         <p class="cta-lead">
-          Conversemos hoy mismo sobre tus entregables. Puedo absorber un rescate en 24-48 horas, activar una prueba piloto técnica sin riesgo o facilitarte el Vendor Onboarding Pack para homologación inmediata.
+          Conversemos hoy mismo sobre tus necesidades editoriales. Podemos coordinar soporte técnico prioritario en 24-48 horas, activar una prueba piloto de validación o facilitarte el Vendor Onboarding Pack para homologación inmediata.
         </p>
         <div class="cta-channels">
           <a href="mailto:contacto@gabinetedrmonje.es?subject=Consulta%20Disponibilidad%20Gabinete%20Dr%20Monje" class="cta-pill">
