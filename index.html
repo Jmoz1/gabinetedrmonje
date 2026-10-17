@@ -2065,6 +2065,9 @@
           <button class="tab-btn" onclick="switchTab('cros', this)">
             🔬 CROs, Fabricantes MDR/IVDR & SaMD
           </button>
+          <button class="tab-btn" onclick="switchTab('biotech', this)">
+            🧬 Biotechs & Life Sciences VC (Motor Traslacional)
+          </button>
         </div>
 
         <!-- TAB 1: AGENCIAS DE SALUD -->
@@ -2236,6 +2239,65 @@
             </div>
           </div>
         </div>
+
+        <!-- TAB 4: BIOTECHS & LIFE SCIENCES VC (MOTOR TRASLACIONAL) -->
+        <div id="tab-biotech" class="tab-pane">
+          <div class="pillars-grid">
+            <div class="pillar-card">
+              <span class="pillar-badge badge-pilar3">ALTO TICKET · CTA / IND</span>
+              <h3 class="pillar-title">Dossier de Posicionamiento Traslacional (Target-to-Clinic)</h3>
+              <p class="pillar-body">
+                Deconstrucción mecanística exhaustiva para solicitud de ensayo clínico (CTA/IND) o defensa científica ante inversores en rondas Serie A (5-15 M€).
+              </p>
+              <ul class="pillar-list">
+                <li><strong>Interrogación de Diana:</strong> Afinidad de unión, selectividad de isoformas y rutas redundantes de compensación biológica.</li>
+                <li><strong>Farmacoseguridad Predictiva:</strong> Mapeo de expresión tisular en tejido sano (GTEx / Human Protein Atlas) y toxicidad cruzada.</li>
+                <li><strong>Escalado Alométrico & MABEL:</strong> Cálculo facultativo de dosis segura de inicio en humanos (FIH).</li>
+                <li><strong>Estratificación Poblacional:</strong> Biomarcadores basales y criterios mecanísticos de inclusión.</li>
+              </ul>
+              <div class="pillar-footer">
+                <span class="pillar-tag">Inmersión 3 a 4 semanas</span>
+                <span class="pillar-price">6.000 € – 14.000 €</span>
+              </div>
+            </div>
+
+            <div class="pillar-card">
+              <span class="pillar-badge badge-pilar3">BIOLOGÍA DE SISTEMAS</span>
+              <h3 class="pillar-title">Enriquecimiento por Biomarcadores & Resistencia</h3>
+              <p class="pillar-body">
+                Estrategia traslacional para rescatar ensayos clínicos oncológicos con respuestas disociadas o resistencia adaptativa a los 6 meses.
+              </p>
+              <ul class="pillar-list">
+                <li><strong>Matriz de Co-mutaciones:</strong> Análisis de variantes genéticas concomitantes (KRAS, STK11, KEAP1, LOH).</li>
+                <li><strong>Farmacogenética Predictiva:</strong> Polimorfismos en citocromos (CYP2D6, CYP3A4), DPYD y transportadores ABC.</li>
+                <li><strong>Racional de Combinaciones:</strong> Doble bloqueo mecanístico para neutralizar vías de escape tumoral.</li>
+                <li><strong>Monitorización ctDNA:</strong> Protocolo de biopsia líquida dinámica para detección precoz de clones resistentes.</li>
+              </ul>
+              <div class="pillar-footer">
+                <span class="pillar-tag">2-3 semanas / Retainer</span>
+                <span class="pillar-price">5.000 € – 10.000 €</span>
+              </div>
+            </div>
+
+            <div class="pillar-card">
+              <span class="pillar-badge badge-pilar2">LIFE SCIENCES VC</span>
+              <h3 class="pillar-title">Due Diligence Médico-Científica para Fondos VC</h3>
+              <p class="pillar-body">
+                Dictamen pericial independiente para fondos de capital riesgo que evalúan invertir en startups biotecnológicas o plataformas diagnósticas.
+              </p>
+              <ul class="pillar-list">
+                <li><strong>Auditoría Forense Preclínica:</strong> Rigor metodológico, controles negativos, modelos animales vs. PDX y replicabilidad.</li>
+                <li><strong>Benchmarking Molecular:</strong> Posicionamiento mecanístico real frente a competidores en fases clínicas I-III.</li>
+                <li><strong>Dictamen de Banderas Rojas (Red Flags):</strong> Detección de toxicidades insalvables y barreras de penetración hospitalaria.</li>
+                <li><strong>Recomendación para el Term Sheet:</strong> Preguntas clave sin resolver y juicio facultativo de viabilidad.</li>
+              </ul>
+              <div class="pillar-footer">
+                <span class="pillar-tag">Plazo: 10 a 14 días</span>
+                <span class="pillar-price">4.500 € – 9.000 €</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -2251,8 +2313,8 @@
         <div class="workflow-grid">
           <div class="workflow-step">
             <div class="step-number">01</div>
-            <h4 class="step-title">Briefing & Firma NDA (&lt; 24h)</h4>
-            <p class="step-desc">Firma digital de acuerdo de confidencialidad estricto. Recepción de objetivos, plazos y especificaciones de formato (Vancouver, AMA, plantillas del cliente).</p>
+            <h4 class="step-title">Briefing, NDA & Protocolo Zero-Cloud (&lt; 24h)</h4>
+            <p class="step-desc">Firma digital de acuerdo de confidencialidad estricto (NDA). Tratamiento de datos sensibles en entorno local aislado sin exposición a nubes comerciales de terceros (Protocolo Zero-Cloud / RGPD).</p>
           </div>
 
           <div class="workflow-step">
@@ -2661,10 +2723,19 @@
 
           <div class="faq-item">
             <div class="faq-question" onclick="toggleFaq(this)">
-              ¿Cómo se maneja la confidencialidad y la protección de los datos del cliente farmacéutico?
+              ¿Cómo se garantiza la confidencialidad técnica de datos sensibles y el secreto industrial (Protocolo Zero-Cloud)?
             </div>
             <div class="faq-answer">
-              Antes de recibir cualquier briefing o material sensible, se formaliza la firma digital de un <strong>Acuerdo de Confidencialidad bilateral (NDA)</strong> con penalización expresa. Toda la información médica se custodia bajo estándares RGPD en servidores locales cifrados y bajo protocolo de destrucción segura tras el cierre del proyecto.
+              Antes de recibir cualquier briefing o material sensible, se formaliza la firma digital de un <strong>Acuerdo de Confidencialidad bilateral (NDA)</strong> con penalización expresa. Adicionalmente, el gabinete opera bajo un estricto <strong>Protocolo de Procesamiento Local Zero-Cloud (Air-Gapped)</strong>: las transcripciones de Advisory Boards, datos preliminares de pipeline y documentos confidenciales se procesan en hardware local propio dedicado (entorno Linux aislado), garantizando que ningún dato salga a nubes comerciales de terceros. Pleno cumplimiento del RGPD, secreto industrial y destrucción segura tras el cierre del proyecto.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              ¿Se utiliza Inteligencia Artificial para redactar o firmar los expedientes médicos?
+            </div>
+            <div class="faq-answer">
+              <strong>Rotundamente no en la redacción facultativa ni en la firma de expedientes.</strong> Toda memoria docente, monografía científica, dictamen pericial o evaluación clínica es fruto exclusivo del criterio facultativo, juicio clínico y firma colegiada personal del Dr. Juan Carlos Monje Ortiz (Col. N.º 450865017), bajo plena responsabilidad civil profesional y <em>Lex Artis ad hoc</em>. La tecnología del gabinete se circunscribe estrictamente a <strong>sistemas propios de indexación bibliográfica determinista</strong>, verificación cruzada automatizada de metadatos contra APIs oficiales de PubMed/MEDLINE y entornos de validación clínica de grado regulatorio (<em>Human-in-the-Loop</em>).
             </div>
           </div>
 
